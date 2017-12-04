@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>manutencao</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>patronage</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        
+        <checkstyle.config.location>checkstyle.xml</checkstyle.config.location>
+		
+		<pmd.version>3.2</pmd.version>
+		<findbugs.version>3.0.5</findbugs.version>
+		<checkstyle.version>2.17</checkstyle.version>
+		
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.3.4.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>5.3.4.Final</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+        	<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+          	</plugin>
+            
+            <!-- Gerando war assinado -->
+           	<plugin>
+		    	<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-jarsigner-plugin</artifactId>
+		        <version>1.2</version>
+		        <executions>
+		        	<execution>
+		            	<id>sign</id>
+		            	<phase>package</phase>
+		            	<goals>
+		              		<goal>sign</goal>
+		            	</goals>
+		          	</execution>
+		        </executions>
+		        <configuration>
+		        	<keystore>src/keys</keystore>
+		          	<!-- alias da tua chave -->
+		          	<alias>keys</alias>
+		          	<!-- senha que foi definida -->
+		          	<storepass>123456</storepass>
+		          	<!-- senha que foi definida -->
+		          	<keypass>123456</keypass>
+		        </configuration>
+		     </plugin>
+		     
+		     <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd.version}</version>
+				<configuration>
+					<rulesets>
+						<ruleset>pmd-rules.xml</ruleset>
+					</rulesets>
+				</configuration>
+			 </plugin>
+			 
+			 <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<failOnError>false</failOnError>
+					<xmlOutput>true</xmlOutput>
+					<includeFilterFile>findbugs-include.xml</includeFilterFile>
+					<xmlOutputDirectory>target</xmlOutputDirectory>
+
+				</configuration>
+			</plugin>
+		     		     
+        </plugins>
+    </build>
+
+	<reporting>
+		<plugins>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			
+		</plugins>
+	</reporting>
+    <groupId>com.ufc.manutencao</groupId>
+</project>

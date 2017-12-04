@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+
+    
+    <Match>
+        <Bug pattern = "EI_EXPOSE_REP"/>
+    </Match>
+
+    <!-- <Match>
+    	<Bug pattern = "ES_COMPARING_PARAMETER_STRING_WITH_EQ"/>
+    </Match>
+    
+    <Match>
+    	<Bug pattern = "ES_COMPARING_STRINGS_WITH_EQ"/>
+    </Match>
+    
+    <Match>
+    	<Bug pattern = "VA_FORMAT_STRING_BAD_ARGUMENT"/>
+    </Match>
+
+    <Match>
+    	<Bug pattern = "NP_TOSTRING_COULD_RETURN_NULL"/>
+    </Match>
+    
+    <Match>
+    	<Bug pattern = "NM_CLASS_NAMING_CONVENTION"/>
+    </Match>
+    
+    <Match>
+    	<Bug pattern = "FI_EMPTY"/>
+    </Match>
+
+    <Match>
+    	<Bug pattern = "ME_MUTABLE_ENUM_FIELD"/>
+    </Match> -->
+    
+</FindBugsFilter>
