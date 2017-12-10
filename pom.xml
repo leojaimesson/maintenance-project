@@ -27,6 +27,7 @@
 		<pmd.version>3.2</pmd.version>
 		<findbugs.version>3.0.5</findbugs.version>
 		<checkstyle.version>2.17</checkstyle.version>
+        <jacoco.version>0.7.10-SNAPSHOT</jacoco.version>
 		
     </properties>
 
@@ -128,6 +129,12 @@
 
 				</configuration>
 			</plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+            </plugin>
 		     		     
         </plugins>
     </build>
