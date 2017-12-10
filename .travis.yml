@@ -5,18 +5,18 @@ jdk:
 sudo: required
 
 install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn -N io.takari:maven:wrapper
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 before_install:
   - chmod +x mvnw
 
 addons:
-    sonarqube:
-        organization: maintenance
-        token:
-            secure: 41d05ae6cf81b600a9d81cfdc9f1dd821206ad33
-         github_token:
-            secure: 3956783abb8ef3692226a517cbb052bf2e37f8cb
+  sonarqube:
+    organization: maintenance
+    token:
+      secure: 41d05ae6cf81b600a9d81cfdc9f1dd821206ad33
+      github_token:
+        secure: 3956783abb8ef3692226a517cbb052bf2e37f8cb
 script:
-    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
