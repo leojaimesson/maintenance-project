@@ -2,9 +2,9 @@
 <FindBugsFilter>
 
     
-    <Match>
+    <!-- <Match>
         <Bug pattern = "EI_EXPOSE_REP"/>
-    </Match>
+    </Match> -->
 
     <!-- <Match>
     	<Bug pattern = "ES_COMPARING_PARAMETER_STRING_WITH_EQ"/>

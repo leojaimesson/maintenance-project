@@ -7,7 +7,7 @@
     <description>Every Java Rule in PMD</description>
 
     <rule ref="rulesets/java/basic.xml"/>
-    <!-- <rule ref="rulesets/java/comments.xml"/> -->
+    <rule ref="rulesets/java/comments.xml"/>
     <rule ref="rulesets/java/empty.xml"/>
     <rule ref="rulesets/java/finalizers.xml"/>
     <rule ref="rulesets/java/imports.xml"/>
