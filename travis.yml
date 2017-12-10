@@ -1,8 +1,0 @@
-language: java
-jdk:
- - oraclejdk8
-matrix:
-  include:
-    os: linux
-    sudo: required
-    env: BUILDERCI=true
