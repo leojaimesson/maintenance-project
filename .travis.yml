@@ -11,5 +11,12 @@ install:
 before_install:
   - chmod +x mvnw
 
+addons:
+    sonarqube:
+        organization: maintenance
+        token:
+            secure: 41d05ae6cf81b600a9d81cfdc9f1dd821206ad33
+         github_token:
+            secure: 85bafa7f94e50cb591a00193eef5c29d07387f65
 script:
-    - mvn install
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
