@@ -5,4 +5,4 @@ jdk:
 sudo: required
 
 script:
-    - mvn install
+    - sudo mvn install
