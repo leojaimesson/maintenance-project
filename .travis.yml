@@ -15,8 +15,15 @@ addons:
   sonarqube:
     organization: maintenance
     token:
-      secure: 76f2b93382838e76c4d8b02666fac212970d6e55
+      secure: $SONARQUBE_API_KEY
     github_token:
-      secure: 3956783abb8ef3692226a517cbb052bf2e37f8cb
+      secure: $GITHUB_API_KEY
+      
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+
+deploy:
+  provider: heroku
+  api-key: 
+    secure: $HEROKU_API_KEY
+  app: maintenance-project-ufc
