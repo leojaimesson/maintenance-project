@@ -156,4 +156,9 @@ Movies
 >- [{"title" : "", "actors" : [], "id":"", "category":"", "available":""}]
 
 
+## Travis
+
+[![Build Status](https://travis-ci.org/leojaimesson/maintenance-project.svg?branch=master)](https://travis-ci.org/leojaimesson/maintenance-project)
+
+
 [Project original](https://github.com/macieg-b/Patronage_RestAPI_SpringBoot)
