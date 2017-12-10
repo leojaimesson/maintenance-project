@@ -18,7 +18,7 @@ addons:
       secure: $SONARQUBE_API_KEY
     github_token:
       secure: $GITHUB_API_KEY
-      
+    
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
